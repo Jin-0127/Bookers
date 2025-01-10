@@ -7,8 +7,8 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "sucessfully"
-      redirect_to '/books'
+      flash[:notice] = "successfully"
+      redirect_to  book_path(@book)
     else
       flash.now[:notice] = "error"
       render :index
